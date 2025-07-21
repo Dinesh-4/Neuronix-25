@@ -1,4 +1,6 @@
 /* CSS Custom Properties for Cyberpunk Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 :root {
     --primary-cyan: #00ffff;
     --electric-blue: #0080ff;
@@ -315,6 +317,7 @@ body {
 .pulse-text {
     animation: pulse 2s ease-in-out infinite;
     color: var(--electric-blue);
+    font-family: "Orbitron", sans-serif;
 }
 
 .heartbeat-line {
@@ -504,54 +507,82 @@ body {
 
 /* Events Section */
 .events {
-    padding: 6rem 0;
+    padding: 6rem 0 3rem;
     background: linear-gradient(135deg, rgba(16, 16, 32, 0.5), rgba(8, 8, 16, 0.8));
 }
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    align-items: start;
+    /* height: 500px; */
 }
 
 .event-card {
-    height: 400px;
     perspective: 1000px;
-    cursor: pointer;
+    overflow: visible;
+    height: 100%;
+}
+
+.events-grid,
+.event-card {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: visible;
 }
 
 .hologram-card {
     position: relative;
     width: 100%;
-    /* height: 100%; */
+    min-height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
+    transition: transform 0.8s ease;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--primary-cyan);
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* ensures no extra space at bottom */
+    padding-bottom: 0
 }
 
 .hologram-card:hover {
     transform: rotateY(180deg);
+    
 }
+
+.hologram-card:hover {
+    box-shadow: inset 0 0 12px var(--neon-purple); /* ✅ glow inside only */
+}
+
 
 .card-front,
 .card-back {
-    position: absolute;
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
-    /* height: 100%; */
+    min-height: 100%;
     backface-visibility: hidden;
+    padding: 2rem;
+    border-radius: 15px;
     background: var(--card-bg);
     border: 1px solid var(--border-glow);
-    border-radius: 15px;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    transition: opacity 0.3s ease;
+    padding:2rem 2rem 1rem;
 }
+
 
 .card-back {
     transform: rotateY(180deg);
     background: linear-gradient(135deg, var(--card-bg), rgba(0, 255, 255, 0.1));
+
 }
 
 .card-header {
@@ -620,6 +651,25 @@ body {
     color: var(--dark-bg);
     box-shadow: 0 0 15px var(--neon-green);
 }
+.event-description {
+    display: none;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.3rem;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.event-item.active .event-description {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* Schedule Section */
 .schedule {
@@ -650,15 +700,15 @@ body {
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    text-align: right;
+    text-align: center;
     padding-right: 3rem;
-    margin-left: 50%;
+    /* margin-left: 50%; */
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    text-align: left;
+    text-align: center;
     padding-left: 3rem;
-    margin-right: 50%;
+    /* margin-right: 50%; */
 }
 
 .timeline-marker {
@@ -702,6 +752,35 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
 }
+
+.timeline-columns {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.timeline-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.timeline-column h3 {
+    text-align: center;
+    color: var(--primary-cyan);
+    margin-bottom: 2rem;
+}
+
+/* Optional: Adjust timeline vertical line only inside each timeline */
+.timeline {
+    max-width: 100%;
+}
+
+.timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 /* Speakers Section */
 .speakers {

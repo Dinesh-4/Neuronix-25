@@ -110,9 +110,7 @@ class NeuronixApp {
         });
 
         document.querySelector('.cyber-btn.secondary')?.addEventListener('click', () => {
-            document.querySelector('#events').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+             window.location.href = 'event-register.html';
         });
 
         // Event card interactions
@@ -631,3 +629,26 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// Event Section Drop Down
+  document.querySelectorAll('.event-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+
+
+  document.getElementById('regForm')?.addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent form's default behavior (i.e., page reload)
+
+    // Optional: Play sound if your submit button has sound logic
+    const sound = document.querySelector('audio[data-sound="form"]');
+    sound?.play();
+
+    // Optional: Show processing animation for a short time
+    document.querySelector('.processing-overlay')?.classList.add('active');
+
+    setTimeout(() => {
+        window.location.href = 'event-register.html'; // redirect after 1 second
+    }, 1000);
+});

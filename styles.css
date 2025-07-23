@@ -298,9 +298,25 @@ body {
     animation: scanlines 2s linear infinite;
 }
 
+/* College Name  */
+.clg-name {
+    text-align: center;
+}
+
+/* .clg-name img {
+    width: 60px;
+    height: 60px;
+} */
+.clg-name h3 {
+    color: var(--primary-cyan);
+    margin-top: 3.5rem;
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+}
+
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     padding: 0 2rem;
@@ -1453,11 +1469,22 @@ body {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
-        /* margin-left: 21%; */
+        /* margin-left: 51%; */
+
+     
+    }
+    .hero-content > * {
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
     }
 
     .hero-buttons {
-        justify-content: center;
+        /* justify-content: center; */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensures buttons are centered too */
+        gap: 1rem;
     }
 
     .timeline::before {

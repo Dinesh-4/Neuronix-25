@@ -36,6 +36,8 @@ body {
     /* overflow-x: hidden !important; */
 }
 html, body {
+    margin: 0;
+  padding: 0;
   overflow-x: hidden;
   /* height: 100%;
    margin: 0;
@@ -174,6 +176,7 @@ html, body {
 
 /* Navigation */
 .navbar {
+    background-color: red;
     /* position: fixed;
     top: 0;
     width: 100%;
@@ -184,14 +187,14 @@ html, body {
     padding: 1rem 0; */
 
     /* position: absolute; */
-    position: sticky;
+    position: sticky !important;
     top: 10px;
     width: 90%;
     left: 5%;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--border-glow);
-    z-index: 1000;
+    z-index: 999;
     padding: 1rem 0;
     margin-top: 20px;
     border-radius: 20px;
@@ -328,7 +331,7 @@ html, body {
     align-items: center;
     padding: 0 2rem;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .hero-content {
@@ -1460,7 +1463,7 @@ html, body {
         text-align: center;
         transition: 0.3s;
         padding: 2rem 0;
-    border: 1px solid var(--border-glow);
+        order: 1px solid var(--border-glow);
 
     }
 
@@ -1471,19 +1474,19 @@ html, body {
     .hamburger {
         display: flex;
     }
-.hero {
-    display: flex;
-    flex-direction: column; /* Stack vertically */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1rem;
-    /* overflow: hidden; */
-    width: 100%;
-    min-height: 68vh; /* Full height view */
-  }
+    .hero {
+        display: flex;
+        flex-direction: column; /* Stack vertically */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+        /* overflow: hidden; */
+        width: 100%;
+        min-height: 68vh; /* Full height view */
+    }
 
-
+  
     .hero-content {
         /* grid-template-columns: 1fr;
         text-align: center;
@@ -1502,22 +1505,22 @@ html, body {
     }
 
      .hero-content > * {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
   }
 
     .hero-visual {
-    margin-top: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: -1;
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: -1;
   }
 
   .hologram-container {
-    max-width: 300px;
-    width: 100%;
+        max-width: 300px;
+        width: 100%;
   }
 
   .heartbeat-line {

@@ -656,10 +656,10 @@ if ('serviceWorker' in navigator) {
 
 // Background music
 
-const audio = document.getElementById("bg-music");
-  audio.volume = 0.05;
-  document.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play().catch(() => {});
-    }
-  }, { once: true });
+// const audio = document.getElementById("bg-music");
+//   audio.volume = 0.05;
+//   document.addEventListener("click", () => {
+//     if (audio.paused) {
+//       audio.play().catch(() => {});
+//     }
+//   }, { once: true });

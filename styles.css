@@ -33,7 +33,7 @@ body {
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.4;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 /* Background Animations */
@@ -210,6 +210,9 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-link {
@@ -1426,7 +1429,7 @@ body {
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
-        left: -100%;
+        left: -150%;
         top: 70px;
         flex-direction: column;
         background: var(--dark-bg);
@@ -1434,6 +1437,8 @@ body {
         text-align: center;
         transition: 0.3s;
         padding: 2rem 0;
+    border: 1px solid var(--border-glow);
+
     }
 
     .nav-menu.active {
@@ -1448,6 +1453,7 @@ body {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        /* margin-left: 21%; */
     }
 
     .hero-buttons {

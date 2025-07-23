@@ -652,3 +652,14 @@ if ('serviceWorker' in navigator) {
         window.location.href = 'event-register.html'; // redirect after 1 second
     }, 1000);
 });
+
+
+// Background music
+
+const audio = document.getElementById("bg-music");
+  audio.volume = 0.05;
+  document.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play().catch(() => {});
+    }
+  }, { once: true });

@@ -64,14 +64,26 @@
 
         /* Navigation Bar */
         .navbar {
-            position: fixed;
+            /* position: fixed;
             top: 0;
             width: 100%;
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-glow);
             z-index: 1000;
+            padding: 1rem 0; */
+            position: absolute;
+            position: sticky;
+            top: 10px;
+            width: 90%;
+            left: 5%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glow);
+            z-index: 1000;
             padding: 1rem 0;
+            margin-top: 20px;
+            border-radius: 20px;
         }
 
         .nav-container {
@@ -177,7 +189,7 @@
 
         .event-image {
             width: 100%;
-            height: 250px;
+            /* height: 250px; */
             background: linear-gradient(135deg, var(--neon-purple), var(--primary-cyan));
             display: flex;
             align-items: center;
@@ -319,11 +331,11 @@
             }
         }
 
-        @media (min-width: 1400px) {
+        /* @media (min-width: 1400px) {
             .events-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
-        }
+        } */
 
         /* Additional Animations */
         .event-card {
@@ -354,13 +366,19 @@
     </style>
 </head>
 <body>
+    <iframe src="music.html" allow="autoplay" style="display: none;"></iframe>
+    <audio id="hoverSound" src="assets/audio/bubble.mp3" preload="auto"></audio>
+
     <!-- Background Animation -->
     <div class="bg-animation"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">NEURONIX '25</a>
+            <a href="index.html" class="nav-logo ">
+                NEURONIX '25
+                <!-- <img src="assets/image/logo.png" alt="" width="150px"> -->
+            </a>
             <a href="index.html" class="nav-back">
                 <i class="fas fa-arrow-left"></i>
                 Back to Home
@@ -378,10 +396,11 @@
                 <!-- Event Card 1 -->
                 <div class="event-card">
                     <div class="event-image event-placeholder">
-                        <i class="fas fa-brain"></i>
+                        <!-- <i class="fas fa-brain"></i> -->
+                         <img src="assets/image/solo.jpeg" alt="">
                     </div>
                     <div class="event-info">
-                        <h3 class="event-title">AI Workshop</h3>
+                        <h3 class="event-title">PASS 1</h3>
                         <p class="event-description">Hands-on workshop covering neural networks, deep learning fundamentals, and practical AI implementation techniques.</p>
                         <a href="https://forms.google.com/sample-workshop-form" target="_blank" class="register-btn">Register</a>
                     </div>
@@ -390,10 +409,12 @@
                 <!-- Event Card 2 -->
                 <div class="event-card">
                     <div class="event-image event-placeholder">
-                        <i class="fas fa-robot"></i>
+                        <!-- <i class="fas fa-robot"></i> -->
+                         <img src="assets/image/duo.jpeg" alt="pack" width="100px">
+
                     </div>
                     <div class="event-info">
-                        <h3 class="event-title">Robotics Demo</h3>
+                        <h3 class="event-title">PASS 2</h3>
                         <p class="event-description">Interactive robotics demonstration featuring cutting-edge automation and AI-powered robotic systems.</p>
                         <a href="https://forms.google.com/sample-robotics-form" target="_blank" class="register-btn">Register</a>
                     </div>
@@ -402,17 +423,19 @@
                 <!-- Event Card 3 -->
                 <div class="event-card">
                     <div class="event-image event-placeholder">
-                        <i class="fas fa-microchip"></i>
+                        <!-- <i class="fas fa-microchip"></i> -->
+                         <img src="assets/image/pack.jpeg" alt="pack">
+
                     </div>
                     <div class="event-info">
-                        <h3 class="event-title">Tech Talk</h3>
+                        <h3 class="event-title">PASS 3</h3>
                         <p class="event-description">Keynote presentations from industry leaders discussing the future of artificial intelligence and machine learning.</p>
                         <a href="https://forms.google.com/sample-techtalk-form" target="_blank" class="register-btn">Register</a>
                     </div>
                 </div>
 
                 <!-- Event Card 4 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-code"></i>
                     </div>
@@ -421,10 +444,10 @@
                         <p class="event-description">Competitive programming challenge focusing on algorithm optimization and AI problem-solving techniques.</p>
                         <a href="https://forms.google.com/sample-coding-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Card 5 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -433,10 +456,10 @@
                         <p class="event-description">Academic research presentations and poster sessions showcasing innovative AI research projects.</p>
                         <a href="https://forms.google.com/sample-research-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Card 6 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-users"></i>
                     </div>
@@ -445,10 +468,10 @@
                         <p class="event-description">Expert panel discussing AI ethics, societal impact, and the future of human-AI collaboration.</p>
                         <a href="https://forms.google.com/sample-panel-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Card 7 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-trophy"></i>
                     </div>
@@ -457,10 +480,10 @@
                         <p class="event-description">Innovation competition featuring student and professional AI projects with exciting prizes.</p>
                         <a href="https://forms.google.com/sample-showcase-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Card 8 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-network-wired"></i>
                     </div>
@@ -469,10 +492,10 @@
                         <p class="event-description">Professional networking opportunities with industry experts, researchers, and fellow participants.</p>
                         <a href="https://forms.google.com/sample-networking-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Card 9 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-lightbulb"></i>
                     </div>
@@ -481,10 +504,10 @@
                         <p class="event-description">Hands-on innovation laboratory where participants can experiment with cutting-edge AI tools and technologies.</p>
                         <a href="https://forms.google.com/sample-innovation-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Event Card 10 -->
-                <div class="event-card">
+                <!-- <div class="event-card">
                     <div class="event-image event-placeholder">
                         <i class="fas fa-certificate"></i>
                     </div>
@@ -493,9 +516,24 @@
                         <p class="event-description">Professional certification workshop covering industry-standard AI and machine learning practices.</p>
                         <a href="https://forms.google.com/sample-certification-form" target="_blank" class="register-btn">Register</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
+
+    <script>
+    const hoverSound = document.getElementById("hoverSound");
+
+    document.querySelectorAll(".event-card").forEach(card => {
+        card.addEventListener("mouseenter", () => {
+            if (hoverSound) {
+                hoverSound.currentTime = 0;
+                hoverSound.volume = 0.2; // very low volume
+                hoverSound.play().catch(() => {}); // Avoid error if autoplay blocked
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

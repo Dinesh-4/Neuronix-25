@@ -33,7 +33,14 @@ body {
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.4;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
+}
+html, body {
+  overflow-x: hidden;
+  /* height: 100%;
+   margin: 0;
+  padding: 0;
+  width: 100%; */
 }
 
 /* Background Animations */
@@ -1464,20 +1471,58 @@ body {
     .hamburger {
         display: flex;
     }
+.hero {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    /* overflow: hidden; */
+    width: 100%;
+    min-height: 68vh; /* Full height view */
+  }
+
 
     .hero-content {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
-        /* margin-left: 51%; */
-
-     
-    }
-    .hero-content > * {
+        gap: 2rem; */
+         gap: 2rem;
+        position: absolute;
         width: 100%;
         max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        margin: 0 auto;
+     
     }
+
+     .hero-content > * {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+    .hero-visual {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+  }
+
+  .hologram-container {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .heartbeat-line {
+    width: 70%;
+  }
 
     .hero-buttons {
         /* justify-content: center; */
@@ -1486,6 +1531,7 @@ body {
         align-items: center; /* Ensures buttons are centered too */
         gap: 1rem;
     }
+
 
     .timeline::before {
         left: 20px;

@@ -319,15 +319,15 @@ html, body {
     height: 60px;
 } */
 .clg-name h3 {
-    color: var(--primary-cyan);
+    /* color: var(--primary-cyan); */
     margin-top: 8.5rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-family: var(--font-primary);
 
 }
 .clg-name p {
-    color: var(--primary-cyan);
-    font-size: 1.6rem;
+    /* color: var(--primary-cyan); */
+    font-size: 1rem;
     font-family: var(--font-primary);
 
 }

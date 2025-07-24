@@ -176,7 +176,7 @@ html, body {
 
 /* Navigation */
 .navbar {
-    background-color: red;
+    /* background-color: red; */
     /* position: fixed;
     top: 0;
     width: 100%;
@@ -187,7 +187,7 @@ html, body {
     padding: 1rem 0; */
 
     /* position: absolute; */
-    position: sticky !important;
+    position: fixed;
     top: 10px;
     width: 90%;
     left: 5%;
@@ -311,6 +311,7 @@ html, body {
 /* College Name  */
 .clg-name {
     text-align: center;
+
 }
 
 /* .clg-name img {
@@ -319,9 +320,16 @@ html, body {
 } */
 .clg-name h3 {
     color: var(--primary-cyan);
-    margin-top: 3.5rem;
+    margin-top: 8.5rem;
     font-size: 1.6rem;
     font-family: var(--font-primary);
+
+}
+.clg-name p {
+    color: var(--primary-cyan);
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+
 }
 
 /* Hero Section */
@@ -1470,6 +1478,10 @@ html, body {
     .nav-menu.active {
         left: 0;
     }
+
+    /* .clg-name {
+    margin-top: 30%;
+} */
 
     .hamburger {
         display: flex;

@@ -790,7 +790,7 @@ html, body {
 }
 .event-description {
     display: none;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     color: var(--text-secondary);
     margin-top: 0.3rem;
     padding-left: 1.5rem;
@@ -1303,6 +1303,8 @@ html, body {
     background-size: 30px 30px;
     opacity: 0.3;
     animation: circuitGlow 10s ease-in-out infinite;
+    /* pointer-events: none; */
+    z-index: -1;
 }
 
 .footer-content {
@@ -1317,6 +1319,8 @@ html, body {
     color: var(--primary-cyan);
     margin-bottom: 1rem;
     font-size: 1.3rem;
+    position: relative;
+    z-index: 10;
 }
 
 .footer-section h4 {
@@ -1328,6 +1332,7 @@ html, body {
 .footer-section p {
     color: var(--text-secondary);
     line-height: 1.8;
+    z-index: 30;
 }
 
 .social-links {

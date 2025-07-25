@@ -756,6 +756,7 @@ html, body {
     border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     position: relative;
     padding-left: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .event-list li:last-child {
@@ -790,7 +791,7 @@ html, body {
 }
 .event-description {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     margin-top: 0.3rem;
     padding-left: 1.5rem;
@@ -1404,6 +1405,13 @@ html, body {
     color: var(--text-secondary);
     font-size: 0.9rem;
 }
+
+.footer-section li::before {
+    content: "\f101";
+    font-family: FontAwesome;
+    color: var(--primary-cyan);
+    /* padding: 0px 3px; */
+} 
 
 /* Modal */
 .modal {

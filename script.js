@@ -113,6 +113,9 @@ class NeuronixApp {
              window.location.href = 'event-register.html';
         });
 
+        document.querySelector('.nav-link.gallery')?.addEventListener('click', () => {
+             window.location.href = 'gallery.html';
+        });
         // Event card interactions
         document.querySelectorAll('.view-more-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Registration - Neuronix '25</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Cyberpunk Theme Variables */
+    :root {
+      --primary-cyan: #00ffff;
+      --electric-blue: #0080ff;
+      --neon-purple: #8000ff;
+      --neon-green: #00ff80;
+      --dark-bg: #0a0a0a;
+      --darker-bg: #050505;
+      --card-bg: rgba(16, 16, 32, 0.8);
+      --border-glow: rgba(0, 255, 255, 0.3);
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --font-primary: 'Orbitron', monospace;
+      --font-secondary: 'Rajdhani', sans-serif;
+      --spacing: 24px;
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-secondary);
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding: var(--spacing);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 10px;
+      width: 90%;
+      left: 5%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glow);
+      z-index: 1000;
+      padding: 1rem 0;
+      margin: 20px auto;
+      border-radius: 20px;
+      background: rgba(10, 10, 10, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary-cyan);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-back:hover {
+      color: var(--primary-cyan);
+      text-shadow: 0 0 10px var(--primary-cyan);
+    }
+     .page-title {
+            text-align: center;
+            font-family: var(--font-primary);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--primary-cyan);
+            /* margin-bottom: 1rem; */
+            text-shadow: 0 0 20px var(--primary-cyan);
+            margin: 2rem auto 1.5rem auto;
+            display: block;
+            max-width: 1000px;
+        }
+
+    /* Gallery Section */
+    .c-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing);
+      margin-top: 2rem;
+    }
+
+    .c-gallery__item {
+      width: calc(33.333% - var(--spacing));
+      flex-grow: 1;
+      min-height: 120px;
+    }
+
+    .c-gallery__item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .c-gallery__item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--primary-cyan);
+    }
+
+    @media (max-width: 768px) {
+      .c-gallery__item {
+        width: calc(50% - var(--spacing));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .c-gallery__item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music (Hidden Autoplay) -->
+  <iframe src="music.html" allow="autoplay" style="display: none;"></iframe>
+  <audio id="hoverSound" src="assets/audio/bubble.mp3" preload="auto"></audio>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">NEURONIX '25</a>
+      <a href="index.html" class="nav-back">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Gallery -->
+  <main>
+        <h1 class="page-title">Our Gallery</h1>
+
+    <section class="c-gallery">
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/144429/pexels-photo-144429.jpeg" alt="Gallery Image 1">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg" alt="Gallery Image 2">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg" alt="Gallery Image 3">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/1481309/pexels-photo-1481309.jpeg" alt="Gallery Image 4">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg" alt="Gallery Image 5">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/2651794/pexels-photo-2651794.jpeg" alt="Gallery Image 6">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/1306791/pexels-photo-1306791.jpeg" alt="Gallery Image 7">
+      </div>
+      <div class="c-gallery__item">
+        <img src="https://images.pexels.com/photos/1677710/pexels-photo-1677710.jpeg" alt="Gallery Image 8">
+      </div>
+    </section>
+  </main>
+</body>
+</html>

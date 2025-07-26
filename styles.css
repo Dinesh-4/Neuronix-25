@@ -1465,9 +1465,28 @@ html, body {
 }
 
 .tech-badge {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-size: 1.3rem;
 }
+
+.tech-badge .zenlo {
+    color: var(--primary-cyan);
+    text-decoration: none;
+    /* transition: all 0.3s ease; */
+    transition: transform 0.3s ease;
+
+}
+
+.tech-badge a {
+    color: var(--text-primary);
+    text-decoration: none;
+}   
+
+.tech-badge .zenlo:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+    transform: scale(1.05);
+}   
 
 .footer-section li::before {
     content: "\f101";

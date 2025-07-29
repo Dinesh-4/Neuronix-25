@@ -1710,7 +1710,7 @@ html, body {
     }
 
     .dashboard-panel,
-    .event-card,
+    /* .event-card, */
     .speaker-card,
     .team-card {
         padding: 1.5rem;
@@ -1750,3 +1750,4 @@ html, body {
 .event-card:hover {
     box-shadow: 0 10px 30px rgba(128, 0, 255, 0.3);
 }
+

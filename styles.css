@@ -903,6 +903,19 @@ html, body {
     min-width: 300px;
 }
 
+/* Add this media query */
+@media (max-width: 768px) {
+  .timeline-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-column {
+    flex: none; /* remove flex shrink behavior */
+    width: 100%; /* or 90% for padding */
+    max-width: 600px;
+  }
+}
 .timeline-column h3 {
     font-family: var(--font-primary);
     text-align: center;

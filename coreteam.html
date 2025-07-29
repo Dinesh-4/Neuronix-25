@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team - Neuronix '25</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary-cyan: #00ffff;
+      --electric-blue: #0080ff;
+      --neon-purple: #8000ff;
+      --neon-green: #00ff80;
+      --dark-bg: #0a0a0a;
+      --darker-bg: #050505;
+      --card-bg: rgba(16, 16, 32, 0.8);
+      --border-glow: rgba(0, 255, 255, 0.3);
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --font-primary: 'Orbitron', monospace;
+      --font-secondary: 'Rajdhani', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-secondary);
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(128, 0, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 100px 100px, 150px 150px, 40px 40px, 40px 40px;
+      animation: bgPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes bgPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+
+    .navbar {
+      position: sticky;
+      top: 10px;
+      width: 90%;
+      left: 5%;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glow);
+      z-index: 1000;
+      padding: 1rem 0;
+      margin-top: 20px;
+      border-radius: 20px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--primary-cyan);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      font-size: 0.9rem;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-back:hover {
+      color: var(--primary-cyan);
+      text-shadow: 0 0 10px var(--primary-cyan);
+    }
+
+    .team {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, rgba(16, 16, 32, 0.5), rgba(8, 8, 16, 0.8));
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-title {
+      font-family: var(--font-primary);
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: var(--primary-cyan);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-glow);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-cyan);
+    }
+
+    .access-card {
+      background: linear-gradient(135deg, var(--card-bg), rgba(0, 255, 128, 0.1));
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .clearance-level {
+      color: var(--neon-green);
+      font-family: var(--font-primary);
+    }
+
+    .card-id {
+      color: var(--text-secondary);
+    }
+
+    .team-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--neon-green);
+    }
+
+    .team-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .team-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .team-info .role {
+      color: var(--neon-green);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-info .department {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .contact-link {
+      color: var(--primary-cyan);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+    }
+  </style>
+</head>
+<body>
+  <iframe src="music.html" allow="autoplay" style="display: none;"></iframe>
+  <audio id="hoverSound" src="assets/audio/bubble.mp3" preload="auto"></audio>
+
+  <div class="bg-animation"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">NEURONIX '25</a>
+      <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+  </nav>
+
+  <section id="team" class="team">
+    <!-- Designing & Development Team -->
+    <div class="container">
+      <h2 class="section-title">Designing & Development Team</h2>
+      <div class="team-grid">
+
+        <!-- Member 1 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">PRESIDENT</span>
+            <span class="card-id">001</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Dhanush.webp" alt="Dhanush M" />
+          </div>
+          <div class="team-info">
+            <h3>Dhanush M</h3>
+            <p class="role">President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">VICE PRESIDENT</span>
+            <span class="card-id">002</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/ashtami.webp" alt="Ashtami" />
+          </div>
+          <div class="team-info">
+            <h3>Ashtami</h3>
+            <p class="role">Vice President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">SECRETARY</span>
+            <span class="card-id">003</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Charan.webp" alt="Charan B" />
+          </div>
+          <div class="team-info">
+            <h3>Charan B</h3>
+            <p class="role">Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">JOINT SECRETARY</span>
+            <span class="card-id">004</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Shyam Sundar.webp" alt="Shyam Sundar R" />
+          </div>
+          <div class="team-info">
+            <h3>Shyam Sundar R</h3>
+            <p class="role">Joint Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- IT Support Team -->
+    <div class="container">
+      <h2 class="section-title">IT Support Team</h2>
+      <div class="team-grid">
+
+        <!-- Member 1 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">PRESIDENT</span>
+            <span class="card-id">001</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Dhanush.webp" alt="Dhanush M" />
+          </div>
+          <div class="team-info">
+            <h3>Dhanush M</h3>
+            <p class="role">President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">VICE PRESIDENT</span>
+            <span class="card-id">002</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/ashtami.webp" alt="Ashtami" />
+          </div>
+          <div class="team-info">
+            <h3>Ashtami</h3>
+            <p class="role">Vice President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">SECRETARY</span>
+            <span class="card-id">003</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Charan.webp" alt="Charan B" />
+          </div>
+          <div class="team-info">
+            <h3>Charan B</h3>
+            <p class="role">Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">JOINT SECRETARY</span>
+            <span class="card-id">004</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Shyam Sundar.webp" alt="Shyam Sundar R" />
+          </div>
+          <div class="team-info">
+            <h3>Shyam Sundar R</h3>
+            <p class="role">Joint Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Marketing & Publicity Team -->
+    <div class="container">
+      <h2 class="section-title">Marketing & Publicity Team</h2>
+      <div class="team-grid">
+
+        <!-- Member 1 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">PRESIDENT</span>
+            <span class="card-id">001</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Dhanush.webp" alt="Dhanush M" />
+          </div>
+          <div class="team-info">
+            <h3>Dhanush M</h3>
+            <p class="role">President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">VICE PRESIDENT</span>
+            <span class="card-id">002</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/ashtami.webp" alt="Ashtami" />
+          </div>
+          <div class="team-info">
+            <h3>Ashtami</h3>
+            <p class="role">Vice President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">SECRETARY</span>
+            <span class="card-id">003</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Charan.webp" alt="Charan B" />
+          </div>
+          <div class="team-info">
+            <h3>Charan B</h3>
+            <p class="role">Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">JOINT SECRETARY</span>
+            <span class="card-id">004</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Shyam Sundar.webp" alt="Shyam Sundar R" />
+          </div>
+          <div class="team-info">
+            <h3>Shyam Sundar R</h3>
+            <p class="role">Joint Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Souvienir Team -->
+    <div class="container">
+      <h2 class="section-title">Souvienir Team</h2>
+      <div class="team-grid">
+
+        <!-- Member 1 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">PRESIDENT</span>
+            <span class="card-id">001</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Dhanush.webp" alt="Dhanush M" />
+          </div>
+          <div class="team-info">
+            <h3>Dhanush M</h3>
+            <p class="role">President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">VICE PRESIDENT</span>
+            <span class="card-id">002</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/ashtami.webp" alt="Ashtami" />
+          </div>
+          <div class="team-info">
+            <h3>Ashtami</h3>
+            <p class="role">Vice President</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">SECRETARY</span>
+            <span class="card-id">003</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Charan.webp" alt="Charan B" />
+          </div>
+          <div class="team-info">
+            <h3>Charan B</h3>
+            <p class="role">Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card access-card">
+          <div class="card-header">
+            <span class="clearance-level">JOINT SECRETARY</span>
+            <span class="card-id">004</span>
+          </div>
+          <div class="team-avatar">
+            <img src="assets/team/Shyam Sundar.webp" alt="Shyam Sundar R" />
+          </div>
+          <div class="team-info">
+            <h3>Shyam Sundar R</h3>
+            <p class="role">Joint Secretary</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i></a>
+              <a href="#" class="contact-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    const hoverSound = document.getElementById("hoverSound");
+    document.querySelectorAll(".team-card").forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        if (hoverSound) {
+          hoverSound.currentTime = 0;
+          hoverSound.volume = 0.2;
+          hoverSound.play().catch(() => {});
+        }
+      });
+    });
+  </script>
+</body>
+</html>

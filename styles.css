@@ -357,7 +357,7 @@ html, body {
     font-family: var(--font-primary);
     font-weight: 900;
     margin-bottom: 1rem;
-    line-height: 1;
+    /* line-height: 1; */
 }
 
 .hero-subtitle {
@@ -1612,7 +1612,7 @@ html, body {
         text-align: center;
         gap: 2rem; */
          gap: 2rem;
-        position: absolute;
+        position: static;
         width: 100%;
         max-width: 600px;
         display: flex;
@@ -1631,6 +1631,7 @@ html, body {
   }
 
     .hero-visual {
+        position: absolute;
         margin-top: 2rem;
         width: 100%;
         display: flex;

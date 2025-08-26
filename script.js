@@ -104,13 +104,13 @@ class NeuronixApp {
 
         // Hero buttons functionality
         document.querySelector('.cyber-btn.primary')?.addEventListener('click', () => {
-            document.querySelector('#register').scrollIntoView({ 
+            document.querySelector('#').scrollIntoView({ 
                 behavior: 'smooth' 
             });
         });
 
         document.querySelector('.cyber-btn.secondary')?.addEventListener('click', () => {
-             window.location.href = 'event-register.html';
+             window.location.href = '#events';
         });
 
         document.querySelector('.nav-link.gallery')?.addEventListener('click', () => {
@@ -656,7 +656,7 @@ if ('serviceWorker' in navigator) {
     document.querySelector('.processing-overlay')?.classList.add('active');
 
     setTimeout(() => {
-        window.location.href = 'event-register.html'; // redirect after 1 second
+        window.location.href = '#register'; // redirect after 1 second
     }, 1000);
 });
 
